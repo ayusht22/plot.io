@@ -88,8 +88,8 @@ d3.csv('data/'+buttonState,function(data){
             "yref": "y",
             "x":parseFloat(data[i]['MDS Col 1'])+0.01,  
             "y": data[i]['MDS Col 2']-0.01,
-            "sizex": 0.06,
-            "sizey": 0.06,
+            "sizex": 0.03,
+            "sizey": 0.03,
             "xanchor": "right",
             "yanchor": "bottom" 
            
@@ -128,8 +128,8 @@ d3.csv('data/'+buttonState,function(data){
             "source": "icons/red.png",
             "xref": "x",
             "yref": "y",
-            "x":0.396,  
-            "y": 0.313,
+            "x":0.52   ,  
+            "y": 0.36000000000000004 ,
             "sizex": 0.04,
             "sizey": 0.04,
             "xanchor": "right",
@@ -141,8 +141,8 @@ d3.csv('data/'+buttonState,function(data){
             "source": "icons/yellow.png",
             "xref": "x",
             "yref": "y",
-            "x":0.455,  
-            "y": 0.05,
+            "x":0.52  ,  
+            "y": 0.6799999999999999,
             "sizex": 0.04,
             "sizey": 0.04,
             "xanchor": "right",
@@ -154,8 +154,8 @@ d3.csv('data/'+buttonState,function(data){
             "source": "icons/green.png",
             "xref": "x",
             "yref": "y",
-            "x":0.705,  
-            "y": 0.85,
+            "x":0.835 ,  
+            "y": 1,
             "sizex": 0.04,
             "sizey": 0.04,
             "xanchor": "right",
@@ -167,7 +167,7 @@ d3.csv('data/'+buttonState,function(data){
                 "source": "icons/blue.png",
                 "xref": "x",
                 "yref": "y",
-                "x":1.019,  
+                "x":1.018,  
                 "y": 1,
                 "sizex": 0.04,
                 "sizey": 0.04,
@@ -272,8 +272,8 @@ d3.csv('data/'+buttonState,function(data){
     var layout = {
         width:1500,
         height:800,
-        xaxis: {range: [-0.1, 1.1],showgrid:false,'zeroline': false,visible:false},
-        yaxis: {range: [0, 1.1],showgrid:false,'zeroline': false,visible:false}, 
+        xaxis: {range: [-0.1, 1.2],showgrid:false,'zeroline': false,visible:false},
+        yaxis: {range: [0, 1.2],showgrid:false,'zeroline': false,visible:false}, 
         shapes: [],
         hovermode:'closest',
         margin: {
@@ -318,7 +318,7 @@ d3.csv('data/'+buttonState,function(data){
           
         }
 
-for (var i = 0; i <1; i +=1) {
+for (var i = 0; i <0; i +=1) {
     layout.shapes.push({
         type: types[i],
         x0:  pos[i][0],
@@ -349,6 +349,41 @@ hoverinfo.push(states)
 
 
 var zoneLine = [
+    {
+    
+        mode:'lines',
+        fill: 'tozeroy',
+        fillcolor:'#87ceeb',
+        showlegend:false,
+        hoverinfo:'none',
+        line:{
+            shape:'spline',
+            color:'#87ceeb'
+        },
+        x:[-0.01,
+            0.66 ,
+            0.9,
+            0.95,
+            1.01, 
+            
+            1.01,
+            1.01,
+           0.98
+            
+             ] 
+            ,
+        y:[1.04,
+            1.04 ,
+            1.04,
+            1.04,
+            1.04 , 
+            1.04,
+            0,
+ 
+],
+        
+    
+        },
     
     {
     
@@ -361,8 +396,29 @@ var zoneLine = [
             shape:'spline',
             color:'#95cf95',
         },
-        x:[0,0.65,0.6900000000000003,0.69],
-        y:[0.85,0.88,0.85,0],
+        x:[-0.01,
+            0.40692307692307694 ,
+            0.8200000000000001,
+            0.99,
+
+            1.01,
+            1.01,
+            1.01,
+            1.01,
+            1.01
+          
+        ],
+        y:[1,
+            1,
+            1 ,
+            1,
+            0.94,
+            0.92,
+            0.7,
+            0.5,
+            0
+
+    ],
         
     
         },
@@ -378,8 +434,18 @@ var zoneLine = [
             shape:'spline',
             color:'#ffbf86',
         },
-        x:[0.38,0.39,0.41,0.42,0.43,0.432,0.435,0.4400000000000002 ],
-        y:[0.31,0.298,0.2,0.1,0.05,0.045,0.04,0.03999999999999995],
+        x:[
+            -0.01,
+            0.6184615384615384 ,
+            0.7384615384615386,
+            0.7
+        ],
+        y:[
+            0.8584615384615384 ,
+            0.8584615384615384,
+            0.8184615384615385,
+            0
+       ],
         
     
     },
@@ -394,8 +460,31 @@ var zoneLine = [
             shape:'spline',
             color:'#ea9393',
         },
-        x:[0,0.34,0.38,0.39],
-        y:[0.31,0.33 ,0.31,0],
+        x:
+        [
+            -0.01,
+            0 ,
+            0 ,
+            0.08 ,
+            0.8123076923076922 ,
+            0.5923076923076923 ,
+            0.4223076923076923 ,
+            0.027692307692307683 ,
+            0
+        ],
+        y:
+        [
+            0,
+            0.2276923076923077 ,
+            0,
+            0 ,
+            0,
+            0.5823076923076922 ,
+            0.6423076923076922 ,
+            0.2676923076923077 ,
+            0
+
+        ]
         
     },
 
@@ -491,7 +580,7 @@ var legends=[
 
    
 ]
-plotData.push(zoneLine[0],zoneLine[1],zoneLine[2])
+plotData.push(zoneLine[0],zoneLine[1],zoneLine[2],zoneLine[3])
 
 for(let i=0;i<dataPoints.length;i++){
     plotData.push(dataPoints[i])
@@ -512,17 +601,16 @@ plotData.push(
     },
     hovertemplate:"%{x},%{y}"+"<extra></extra>",
     x:[0,
-        0.38,
-        0.4400000000000002,
-        0.6900000000000003,
-        1
-       ],
+        0.52 ,   
+        0.52 ,  
+        0.8199999999999998 ,     
+        1   ],
     y:[0,
-        0.31000000000000016,
-        0.03999999999999995,
-        0.85,
+        0.36000000000000004,
+        0.6799999999999999,
+        1,
         1
-       ]
+    ]
     
     }
 )
