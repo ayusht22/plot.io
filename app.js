@@ -455,7 +455,7 @@ var zoneLine = [
         fill: 'tozeroy',
         fillcolor:'#ea9393',
         showlegend:false,
-        hoverinfo:'none',
+        //hoverinfo:'none',
         line:{
             shape:'spline',
             color:'#ea9393',
@@ -465,8 +465,11 @@ var zoneLine = [
             -0.01,
             0 ,
             0 ,
-            0.08 ,
+            0.01,
+            0.1 ,
+            0.81,
             0.8123076923076922 ,
+            
             0.5923076923076923 ,
             0.4223076923076923 ,
             0.027692307692307683 ,
@@ -477,7 +480,9 @@ var zoneLine = [
             0,
             0.2276923076923077 ,
             0,
+            0,
             0 ,
+            0,
             0,
             0.5823076923076922 ,
             0.6423076923076922 ,
@@ -631,7 +636,7 @@ data.push(
         hoverinfo:'none'
     }
 )}*/
-Plotly.newPlot(myDiv, plotData, layout);
+Plotly.newPlot(myDiv, plotData, layout,{scrollZoom: true});
 
 myDiv.on('plotly_click', function(data)
 {   
@@ -653,7 +658,7 @@ myDiv.on('plotly_click', function(data)
             })
         
     }
-    Plotly.react(myDiv, plotData, layout);
+    Plotly.react(myDiv, plotData, layout,{scrollZoom: true});
 
   //  func()
 });
